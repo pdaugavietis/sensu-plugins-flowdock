@@ -13,27 +13,46 @@
  * bin/handler-flowdock.rb
 
 ## Usage
+@event['client']['flowdock_tags']
 
 ```
 {
   "flowdock": {
-    "auth_token": "FLOWDOCK_API_TOKEN",
-    "tags" : "sensu alerting",
-    "push_type": "inbox|chat",
-    "mail_from": "alerting@sensu.com",
-    "name_from": "Sensu",
+    "dashboard_url": "sensu-url",
+    "host_id_command": "hostname",
+    "flow_token": "",
+    "proxy_host": "",
+    "proxy_port": "",
+    "proxy_username": "",
+    "proxy_password": "",
+    "tags": [
+      "sensu",
+      "alert"
+    ],
     "subscriptions": {
-        "default": {
-            "tags": "default"
-        }
+      "subscription_name": {
+        "tags": [ "sensu", "subscription_tag"]
+      }
     }
   }
 }
 
+{
+  "client": {
+    ...
+    "flowdock_tags": [ "client_tag" ]
+    ...
+    "u1b0": {
+      "datacenter_name":"MRK"
+    }
+  }
+}
+```
+
 Params are optionals, only auth_token is required.
 
   * auth_token : Flowdock token API
-  * tag : Fowdock tags separate by " "
+  * tag : Flowdock tags separated by spaces (" ")
   * push_type : Push into inbox or chat (default chat)
   * mail_from : email from for inbox
   * name_from : Name of flowdock/email user
