@@ -114,7 +114,7 @@ class FlowdockNotifier < Sensu::Handler
   end
 
   def handle
-    @settings = JSON.parse(File.read('flowdock.json'))
+    # @settings = JSON.parse(File.read('flowdock.json'))
 
     flow_token = @settings[config[:json_config]]['flow_token']
 
