@@ -80,8 +80,8 @@ class FlowdockNotifier < Sensu::Handler
 
   def build_event_url
     @settings[config[:json_config]]['dashboard_url'] + '/#/client/' +
-      @event['client']['facts']['datacenter'] + '/' +
-      @event['client']['name'] + '?check=' + @event['check']['name'] if @event['client']['facts']['datacenter']
+      @settings[config[:json_config]]['datacenter_name'] + '/' +
+      @event['client']['name'] + '?check=' + @event['check']['name'] if @settings[config[:json_config]]['datacenter_name']
   end
 
   def build_message
@@ -89,7 +89,7 @@ class FlowdockNotifier < Sensu::Handler
     message['event'] = 'activity'
     message['flow_token'] = @settings[config[:json_config]]['flow_token']
     message['author'] = {}
-    message['author']['name'] = @event['client']['facts']['datacenter'] + '/' + @event['client']['name']
+    message['author']['name'] = @settings[config[:json_config]]['datacenter_name'] + '/' + @event['client']['name']
     message['author']['avatar'] = "https://sensuapp.org/img/logo-flat-white.png"
     message['tags'] = build_tags_list
     message['title'] = action_to_string.upcase
@@ -114,7 +114,7 @@ class FlowdockNotifier < Sensu::Handler
   end
 
   def handle
-    # @settings = JSON.parse(File.read('flowdock.json'))
+    @settings = JSON.parse(File.read('flowdock.json'))
 
     flow_token = @settings[config[:json_config]]['flow_token']
 
