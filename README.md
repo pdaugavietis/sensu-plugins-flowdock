@@ -1,11 +1,8 @@
 ## Sensu-Plugins-flowdock
 
-[ ![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-flowdock.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-flowdock)
+[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-flowdock.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-flowdock)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-flowdock.svg)](http://badge.fury.io/rb/sensu-plugins-flowdock)
-[![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-flowdock/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-flowdock)
-[![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-flowdock/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-flowdock)
 [![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-flowdock.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-flowdock)
-"!https://codeship.com/projects/69409d80-ea31-0132-13b2-32dfa18a9fce/status?branch=master!":https://codeship.com/projects/83073
 
 ## Functionality
 
